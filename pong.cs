@@ -41,7 +41,7 @@ class Program
                 {
                     MovePaddle(1);
                 }
-                //cki = Console.ReadKey(true);                            
+                cki = Console.ReadKey(true);                            
             } 
         }  
 
