@@ -1,0 +1,11 @@
+/Users/Guest/Desktop/pong/bin/Debug/netcoreapp2.2/pong.deps.json
+/Users/Guest/Desktop/pong/bin/Debug/netcoreapp2.2/pong.runtimeconfig.json
+/Users/Guest/Desktop/pong/bin/Debug/netcoreapp2.2/pong.runtimeconfig.dev.json
+/Users/Guest/Desktop/pong/bin/Debug/netcoreapp2.2/pong.dll
+/Users/Guest/Desktop/pong/bin/Debug/netcoreapp2.2/pong.pdb
+/Users/Guest/Desktop/pong/obj/Debug/netcoreapp2.2/pong.csprojAssemblyReference.cache
+/Users/Guest/Desktop/pong/obj/Debug/netcoreapp2.2/pong.csproj.CoreCompileInputs.cache
+/Users/Guest/Desktop/pong/obj/Debug/netcoreapp2.2/pong.AssemblyInfoInputs.cache
+/Users/Guest/Desktop/pong/obj/Debug/netcoreapp2.2/pong.AssemblyInfo.cs
+/Users/Guest/Desktop/pong/obj/Debug/netcoreapp2.2/pong.dll
+/Users/Guest/Desktop/pong/obj/Debug/netcoreapp2.2/pong.pdb
