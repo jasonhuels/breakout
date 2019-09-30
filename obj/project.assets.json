@@ -686,28 +686,30 @@
     ]
   },
   "packageFolders": {
-    "/Users/Guest/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\jason\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Guest/Desktop/pong/pong.csproj",
+      "projectUniqueName": "C:\\Users\\jason\\Desktop\\Epicodus\\c#\\breakout\\pong.csproj",
       "projectName": "pong",
-      "projectPath": "/Users/Guest/Desktop/pong/pong.csproj",
-      "packagesPath": "/Users/Guest/.nuget/packages/",
-      "outputPath": "/Users/Guest/Desktop/pong/obj/",
+      "projectPath": "C:\\Users\\jason\\Desktop\\Epicodus\\c#\\breakout\\pong.csproj",
+      "packagesPath": "C:\\Users\\jason\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jason\\Desktop\\Epicodus\\c#\\breakout\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/Guest/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\jason\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

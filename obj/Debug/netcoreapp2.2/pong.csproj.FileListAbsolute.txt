@@ -9,3 +9,14 @@
 /Users/Guest/Desktop/pong/obj/Debug/netcoreapp2.2/pong.AssemblyInfo.cs
 /Users/Guest/Desktop/pong/obj/Debug/netcoreapp2.2/pong.dll
 /Users/Guest/Desktop/pong/obj/Debug/netcoreapp2.2/pong.pdb
+C:\Users\jason\Desktop\Epicodus\c#\breakout\bin\Debug\netcoreapp2.2\pong.deps.json
+C:\Users\jason\Desktop\Epicodus\c#\breakout\bin\Debug\netcoreapp2.2\pong.runtimeconfig.json
+C:\Users\jason\Desktop\Epicodus\c#\breakout\bin\Debug\netcoreapp2.2\pong.runtimeconfig.dev.json
+C:\Users\jason\Desktop\Epicodus\c#\breakout\bin\Debug\netcoreapp2.2\pong.dll
+C:\Users\jason\Desktop\Epicodus\c#\breakout\bin\Debug\netcoreapp2.2\pong.pdb
+C:\Users\jason\Desktop\Epicodus\c#\breakout\obj\Debug\netcoreapp2.2\pong.csprojAssemblyReference.cache
+C:\Users\jason\Desktop\Epicodus\c#\breakout\obj\Debug\netcoreapp2.2\pong.csproj.CoreCompileInputs.cache
+C:\Users\jason\Desktop\Epicodus\c#\breakout\obj\Debug\netcoreapp2.2\pong.AssemblyInfoInputs.cache
+C:\Users\jason\Desktop\Epicodus\c#\breakout\obj\Debug\netcoreapp2.2\pong.AssemblyInfo.cs
+C:\Users\jason\Desktop\Epicodus\c#\breakout\obj\Debug\netcoreapp2.2\pong.dll
+C:\Users\jason\Desktop\Epicodus\c#\breakout\obj\Debug\netcoreapp2.2\pong.pdb
