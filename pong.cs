@@ -12,7 +12,7 @@ class Program
      const char rightWall = (char)9616;
     const char background = (char)183;//65532;
     static int[] ballPosition = {15, 25};
-    static int[] paddlePosition = {23, 24, 25, 26, 27};
+    static int[] paddlePosition = {22, 23, 24, 25, 26, 27, 28};
     static int[] BallSpeed = {1,0};
     static bool playing = true;
     static void Main()
@@ -44,12 +44,12 @@ class Program
                 }
                 else if(move && cki.Key.ToString() == "LeftArrow")
                 {
-                    MovePaddle(-3); 
+                    MovePaddle(-2); 
                     move = false;    
                 }
                  else if(move && cki.Key.ToString() == "RightArrow")
                 {
-                    MovePaddle(3);
+                    MovePaddle(2);
                     move = false;
                 }                        
             } 
@@ -86,9 +86,11 @@ class Program
         screen[29, paddlePosition[2]] = paddle;
         screen[29, paddlePosition[3]] = paddle;
         screen[29, paddlePosition[4]] = paddle;
+        screen[29, paddlePosition[5]] = paddle;
+        screen[29, paddlePosition[6]] = paddle;
         screen[15, 25] = ball;
 
-                screen[4, 15] = brick;
+        screen[4, 15] = brick;
         screen[4, 16] = brick;
         screen[4, 18] = brick;
         screen[4, 19] = brick;
@@ -157,6 +159,8 @@ class Program
         screen[29, paddlePosition[2]] = paddle;
         screen[29, paddlePosition[3]] = paddle;
         screen[29, paddlePosition[4]] = paddle;
+        screen[29, paddlePosition[5]] = paddle;
+        screen[29, paddlePosition[6]] = paddle;
 
         string boardString = "\r";
         for(int i=0; i<screen.GetLength(0); i++) 
@@ -178,7 +182,7 @@ class Program
         int randInt = rand.Next(-1,2);
         int[] newPos = {currentLocation[0] + speed[0], currentLocation[1] + speed[1]};
         
-        if(newPos[1] <= Math.Abs(BallSpeed[1]))
+        if(newPos[1] < Math.Abs(BallSpeed[1]))
         {
             BallSpeed[1] = BallSpeed[1]*-1;
         } else if(newPos[1] >= screen.GetLength(1)-Math.Abs(BallSpeed[1]+1))
@@ -210,22 +214,34 @@ class Program
                 else if(newPos[1] == paddlePosition[2])
                 {
                     BallSpeed[0] = -1;
-                    BallSpeed[1] = 0;
+                    BallSpeed[1] = 1;
                     MoveBall(ballPosition, BallSpeed); 
                 }
                 else if(newPos[1] == paddlePosition[3])
                 {
                     BallSpeed[0] = -1;
-                    BallSpeed[1] = 1;
+                    BallSpeed[1] = 0;
                     MoveBall(ballPosition, BallSpeed); 
                 } 
                 else if(newPos[1] == paddlePosition[4])
                 {
                     BallSpeed[0] = -1;
+                    BallSpeed[1] = 1;
+                    MoveBall(ballPosition, BallSpeed); 
+                } 
+                else if(newPos[1] == paddlePosition[5])
+                {
+                    BallSpeed[0] = -1;
+                    BallSpeed[1] = 1;
+                    MoveBall(ballPosition, BallSpeed); 
+                } 
+                else if(newPos[1] == paddlePosition[6])
+                {
+                    BallSpeed[0] = -1;
                     BallSpeed[1] = 2;
                     MoveBall(ballPosition, BallSpeed); 
                 } 
-                else if(newPos[1] == paddlePosition[4]+1)
+                else if(newPos[1] == paddlePosition[6]+1)
                 {
                     BallSpeed[0] = -1;
                     BallSpeed[1] = 2 + randInt;
@@ -265,24 +281,30 @@ class Program
 
     static void MovePaddle(int direction)
     {
-        if(paddlePosition[0]+direction >0 && paddlePosition[4]+direction < screen.GetLength(1)-1)
+        if(paddlePosition[0]+direction >0 && paddlePosition[6]+direction < screen.GetLength(1)-1)
         {
             screen[29, paddlePosition[0]] = background;
             screen[29, paddlePosition[1]] = background;
             screen[29, paddlePosition[2]] = background;
             screen[29, paddlePosition[3]] = background;
             screen[29, paddlePosition[4]] = background;
+            screen[29, paddlePosition[5]] = background;
+            screen[29, paddlePosition[6]] = background;
             
             paddlePosition[0] += direction;
             paddlePosition[1] += direction;
             paddlePosition[2] += direction;
             paddlePosition[3] += direction;
             paddlePosition[4] += direction;
+            paddlePosition[5] += direction;
+            paddlePosition[6] += direction;
             screen[29, paddlePosition[0]] = paddle;
             screen[29, paddlePosition[1]] = paddle;
             screen[29, paddlePosition[2]] = paddle;
             screen[29, paddlePosition[3]] = paddle;
             screen[29, paddlePosition[4]] = paddle;
+            screen[29, paddlePosition[5]] = paddle;
+            screen[29, paddlePosition[6]] = paddle;
         }
     }
 }
