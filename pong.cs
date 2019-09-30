@@ -29,12 +29,6 @@ class Program
         }
 
     }
-
-    static void FlushKeyboard()
-{
-    while (Console.In.Peek() != -1)
-        Console.In.Read();
-}
     
     static void GameLoop()
     {
@@ -50,12 +44,12 @@ class Program
                 }
                 else if(move && cki.Key.ToString() == "LeftArrow")
                 {
-                    MovePaddle(-2); 
+                    MovePaddle(-3); 
                     move = false;    
                 }
                  else if(move && cki.Key.ToString() == "RightArrow")
                 {
-                    MovePaddle(2);
+                    MovePaddle(3);
                     move = false;
                 }                        
             } 
@@ -178,15 +172,27 @@ class Program
 
     static void MoveBall(int[] currentLocation, int[] speed)
     {
+        Random rand = new Random();
+        if(speed[1] < -3) speed[1] = -3;
+        if(speed[1] > 3) speed[1] = 3;
+        int randInt = rand.Next(-1,2);
         int[] newPos = {currentLocation[0] + speed[0], currentLocation[1] + speed[1]};
-        if(newPos[0] >= 0 && newPos[0] < screen.GetLength(0))
+        
+        if(newPos[1] <= Math.Abs(BallSpeed[1]))
+        {
+            BallSpeed[1] = BallSpeed[1]*-1;
+        } else if(newPos[1] >= screen.GetLength(1)-Math.Abs(BallSpeed[1]+1))
+        {
+            BallSpeed[1] = BallSpeed[1]*-1;
+        }
+        else if(newPos[0] >= 0 && newPos[0] < screen.GetLength(0))
         {
             if(newPos[0] == screen.GetLength(0)-1)
             {
                 if(newPos[1] == paddlePosition[0]-1)
                 {
                     BallSpeed[0] = -1;
-                    BallSpeed[1] = -4;
+                    BallSpeed[1] = -2 + randInt;
                     MoveBall(ballPosition, BallSpeed); 
                 }
                 else if(newPos[1] == paddlePosition[0])
@@ -222,12 +228,14 @@ class Program
                 else if(newPos[1] == paddlePosition[4]+1)
                 {
                     BallSpeed[0] = -1;
-                    BallSpeed[1] = 4;
+                    BallSpeed[1] = 2 + randInt;
                     MoveBall(ballPosition, BallSpeed); 
                 } 
-                else {
+                else 
+                {
                     // Destroy ball
                 }
+                
             }
             else if(newPos[0] == 0)
             {
@@ -235,6 +243,15 @@ class Program
 
                 MoveBall(ballPosition, BallSpeed); 
             }
+            else if(screen[newPos[0], newPos[1]] == brick)
+                {
+                    screen[newPos[0], newPos[1]] = background;
+                    screen[newPos[0], newPos[1]+1] = background;
+                    screen[newPos[0], newPos[1]-1] = background;
+                    BallSpeed[0] *= -1;
+                    BallSpeed[1] *= -1 + randInt;
+                    MoveBall(ballPosition, BallSpeed); 
+                } 
             else 
             {
                 screen[newPos[0], newPos[1]] = ball;
@@ -243,13 +260,7 @@ class Program
             }
             
         } 
-        if(newPos[1] <= Math.Abs(BallSpeed[1]))
-        {
-            BallSpeed[1] = BallSpeed[1]*-1;
-        } else if(newPos[1] >= screen.GetLength(1)-Math.Abs(BallSpeed[1]+1))
-        {
-            BallSpeed[1] = BallSpeed[1]*-1;
-        }
+        
     }
 
     static void MovePaddle(int direction)
