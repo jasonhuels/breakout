@@ -53,7 +53,7 @@ class Program
                     move = false;
                 }                        
             } 
-            Thread.Sleep(100);
+            Thread.Sleep(80);
             MoveBall(ballPosition, BallSpeed);
             DrawBoard();                 
             
@@ -177,8 +177,8 @@ class Program
     static void MoveBall(int[] currentLocation, int[] speed)
     {
         Random rand = new Random();
-        if(speed[1] < -3) speed[1] = -3;
-        if(speed[1] > 3) speed[1] = 3;
+        if(speed[1] < -2) speed[1] = -2;
+        if(speed[1] > 2) speed[1] = 2;
         int randInt = rand.Next(-1,2);
         int[] newPos = {currentLocation[0] + speed[0], currentLocation[1] + speed[1]};
         
