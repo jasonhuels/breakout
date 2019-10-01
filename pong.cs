@@ -201,7 +201,6 @@ class Program
         {
             while (ballPosition[1] < screen.GetLength(1)-3)
             {
-                //newPos[1] = currentLocation[1]+1;
                 screen[newPos[0], newPos[1]] = ball;
                 screen[currentLocation[0], currentLocation[1]] = background;
                 ballPosition = newPos;
@@ -266,9 +265,18 @@ class Program
                     BallSpeed[1] = 2 + randInt;
                     MoveBall(ballPosition, BallSpeed); 
                 } 
+                else if(screen[newPos[0], newPos[1]] == paddle)
+                {
+                    BallSpeed[0] = -1;
+                    BallSpeed[1] = 0;
+                    MoveBall(ballPosition, BallSpeed);
+                }
                 else 
                 {
                     // Destroy ball
+                    ball = background;
+                    screen[currentLocation[0], currentLocation[1]] = ball;
+                    playing = false;
                 }
                 
             }
