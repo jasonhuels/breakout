@@ -5,7 +5,7 @@ using System.Threading;
 class Program
 {
     static char[,] screen = new char[30, 50];
-    const char ball = (char)79;//9673;//12295;
+    static char ball = (char)9673;//79;//12295;
     const char brick = (char)9608;
     const char paddle = (char)9600;
     const char leftWall = (char)9612;
@@ -22,6 +22,12 @@ class Program
         DrawBoard();
         while(playing)
         {
+            if(CheckWin())
+            {
+                playing = false;
+                Console.WriteLine("You Won \n ¯L_(ツ)_/¯");
+                break;
+            }
             if(Console.KeyAvailable)
             {
                 GameLoop();
@@ -184,9 +190,22 @@ class Program
         
         if(newPos[1] < Math.Abs(BallSpeed[1]))
         {
+            while(ballPosition[1] > 2)
+            {
+                screen[newPos[0], newPos[1]] = ball;
+                screen[currentLocation[0], currentLocation[1]] = background;
+                ballPosition = newPos;
+            }
             BallSpeed[1] = BallSpeed[1]*-1;
-        } else if(newPos[1] >= screen.GetLength(1)-Math.Abs(BallSpeed[1]+1))
+        } else if(newPos[1] > screen.GetLength(1)-1-Math.Abs(BallSpeed[1]))
         {
+            while (ballPosition[1] < screen.GetLength(1)-3)
+            {
+                //newPos[1] = currentLocation[1]+1;
+                screen[newPos[0], newPos[1]] = ball;
+                screen[currentLocation[0], currentLocation[1]] = background;
+                ballPosition = newPos;
+            }
             BallSpeed[1] = BallSpeed[1]*-1;
         }
         else if(newPos[0] >= 0 && newPos[0] < screen.GetLength(0))
@@ -306,5 +325,21 @@ class Program
             screen[29, paddlePosition[5]] = paddle;
             screen[29, paddlePosition[6]] = paddle;
         }
+    }
+
+    static bool CheckWin()
+    {
+        bool win = true;
+        for(int i=0; i<screen.GetLength(0); i++)
+        {
+            for(int j=0; j<screen.GetLength(1); j++)
+            {
+                if(screen[i,j] == brick)
+                {
+                    win = false;
+                }
+            }
+        }
+        return win;
     }
 }
