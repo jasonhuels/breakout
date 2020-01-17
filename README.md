@@ -13,7 +13,7 @@ _A clone of breakout played in the command console_
 * _Run "dotnet run" command to open application in the command console_
 
 ## Known Bugs
-_N/A_
+* Screen redraw flashes in an unpleasant way on Windows systems (tested on 8.1 and 10) 
 
 ## Support and contact details
 _N/A_
